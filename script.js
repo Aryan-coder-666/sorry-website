@@ -7,7 +7,7 @@ const settings = {
     typeSpeed: 35,
 
     message:
-        "I know that sometimes saying sorry isn't enough. I wanted to slow down, think about everything, and put the things I couldn't say properly into this little page. I don't expect a button to fix everything. I just wanted you to know that I understand, I'm genuinely sorry, and I hope this message at least makes you smile a little."
+    "Okay suno... 😭\n\nMujhe pata hai thodi si gussa ho tum mujhse.\n\nAur haan, friend ka naam mention karna + VC na karna... dono ka case mere against hai. 😭😂\n\nBut sach mein, mera tumhe irritate karne ka intention nahi tha.\n\nAb itna bhi gussa mat ho yaar. 🥲\n\nAur dekho, sorry bolne ke liye poori website bana di maine... ab isse zyada effort aur kya karu? 😂\n\nBas ab thoda sa gussa kam karo, baaki daantna ho toh woh baad mein kar lena. 😭😂💗"
 
 };
 
