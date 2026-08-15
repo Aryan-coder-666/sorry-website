@@ -4,153 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ek Chhoti Si Sorry 💗</title>
+    <title>Bas Ek Sorry 🥺</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- FLOATING HEARTS -->
-    <div id="floatingHearts"></div>
+    <!-- Decorative hearts -->
+    <div id="hearts"></div>
 
-    <!-- ================================
+    <!-- =========================
          INTRO
-    ================================= -->
+    ========================== -->
 
-    <main id="intro" class="intro">
+    <section id="intro" class="screen intro-screen">
 
         <div class="intro-card">
 
-            <div class="intro-gif-wrap">
-                <img
-                    src="images/cute.gif"
-                    alt="Cute animation"
-                    class="intro-gif"
-                >
-            </div>
+            <img
+                src="images/cute.gif"
+                class="intro-gif"
+                alt="cute"
+            >
 
-            <p class="small-heading">
-                OYE SUNO... 👀
-            </p>
+            <p class="eyebrow">EK MINUTE 👀</p>
 
             <h1>
-                Ek chhoti si<br>
-                <span>baat hai...</span>
+                Suno madam...
+                <span>🥺</span>
             </h1>
 
-            <p class="intro-text">
-                Pehle ye dekh lo,<br>
-                phir jitna gussa karna hai kar lena. 😭😂
+            <p class="intro-description">
+                Pehle ye chhoti si website dekh lo.<br>
+                Phir jitna gussa karna hai kar lena. 😂
             </p>
 
-            <button id="startBtn" class="main-btn">
-                Dekho na 💌
+            <button id="startButton" class="pink-button">
+                Open karo 💌
             </button>
 
         </div>
 
-    </main>
+    </section>
 
 
-    <!-- ================================
-         WEBSITE
-    ================================= -->
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
 
-    <div id="site" class="site hidden">
-
-        <!-- MUSIC -->
-        <button id="musicBtn" class="music-btn">
-            ♪
-        </button>
+    <main id="website" class="hidden">
 
 
-        <!-- ============================
-             PAGE 1
-        ============================= -->
+        <!-- =====================
+             SCREEN 1
+        ====================== -->
 
-        <section id="page1" class="page active">
+        <section id="screen1" class="screen active">
 
-            <div class="page-content">
+            <div class="content">
 
-                <p class="label">
-                    THODA SA SORRY MOMENT 😭
+                <p class="eyebrow">
+                    EK CHHOTI SI SORRY
                 </p>
 
                 <h2>
-                    Ye tumhare liye hai.
+                    Tumhare liye kuch hai 💗
                 </h2>
 
-                <p class="subtext">
-                    Aur haan... pura dekhna padega. 😌
+                <p class="subtitle">
+                    Envelope open karo...
                 </p>
 
 
-                <div class="envelope-area">
+                <div class="envelope-stage">
 
-                    <!-- ENVELOPE -->
+                    <!-- Envelope -->
                     <div
                         id="envelope"
                         class="envelope"
-                        tabindex="0"
                     >
 
                         <div class="envelope-back"></div>
 
-                        <div class="letter-paper">
+                        <div class="letter">
+                            <div class="letter-heart">♡</div>
 
-                            <div class="paper-heart">
-                                ♡
-                            </div>
+                            <h3>
+                                For You
+                            </h3>
 
-                            <strong>
-                                For you
-                            </strong>
-
-                            <small>
-                                open me 💌
-                            </small>
-
+                            <p>
+                                ek chhoti si baat 💌
+                            </p>
                         </div>
 
                         <div class="envelope-front"></div>
 
                         <div class="envelope-flap"></div>
 
-                        <div class="wax">
+                        <div class="seal">
                             ♥
                         </div>
 
                     </div>
 
 
-                    <!-- SORRY CHARACTER ON RIGHT -->
-                    <div class="sorry-character">
+                    <!-- PNG stays BESIDE envelope -->
+                    <div class="side-character">
+
+                        <div class="bubble">
+                            Sorry naaa 🥺
+                        </div>
 
                         <img
                             src="images/sorry.png"
-                            alt="Sorry"
+                            alt="sorry"
                         >
-
-                        <div class="speech-bubble">
-                            sorry na 🥺
-                        </div>
 
                     </div>
 
                 </div>
 
 
-                <p id="envelopeHint" class="hint">
-                    Envelope pe click karo 👆
+                <p id="envelopeInstruction" class="instruction">
+                    👆 Envelope pe click karo
                 </p>
 
             </div>
@@ -158,48 +141,51 @@
         </section>
 
 
-        <!-- ============================
-             PAGE 2
-        ============================= -->
+        <!-- =====================
+             SCREEN 2
+        ====================== -->
 
-        <section id="page2" class="page">
+        <section id="screen2" class="screen">
 
-            <div class="page-content message-page">
+            <div class="content message-layout">
 
-                <div class="gif-side left-gif">
+                <div class="decoration">
+
                     <img
                         src="images/sadlife.gif"
-                        alt="Sad cute animation"
+                        alt="sad"
                     >
+
                 </div>
 
-                <div class="message-content">
 
-                    <p class="label">
-                        OKAY AB SERIOUSLY 😭
+                <div class="message-box">
+
+                    <p class="eyebrow">
+                        OKAY SUNO 😭
                     </p>
 
                     <h2>
-                        Suno madam...
+                        Gussa valid hai...
                     </h2>
 
-                    <div class="message-card">
+                    <div class="white-card">
 
                         <img
                             src="images/cute.gif"
-                            alt="Cute"
                             class="message-gif"
+                            alt="cute"
                         >
 
-                        <p id="typedMessage"></p>
+                        <p id="message"></p>
 
                     </div>
 
                     <button
-                        id="next1"
-                        class="main-btn hidden"
+                        id="button2"
+                        class="pink-button"
                     >
-                        Aage bhi hai 👀 →
+                        Aage dekho 👀
                     </button>
 
                 </div>
@@ -209,58 +195,57 @@
         </section>
 
 
-        <!-- ============================
-             PAGE 3
-        ============================= -->
+        <!-- =====================
+             SCREEN 3
+        ====================== -->
 
-        <section id="page3" class="page">
+        <section id="screen3" class="screen">
 
-            <div class="page-content">
+            <div class="content">
 
-                <p class="label">
-                    THODA SA EXPLANATION 😭
+                <img
+                    src="images/run.gif"
+                    class="medium-gif"
+                    alt="running"
+                >
+
+                <p class="eyebrow">
+                    MERA CASE 😭
                 </p>
 
                 <h2>
-                    Case mere against hai...
+                    Haan bhai, galti ho gayi 😂
                 </h2>
 
-                <div class="case-card">
+                <div class="mistake-card">
 
-                    <div class="case-row">
+                    <div>
                         <span>Friend ka naam mention kiya</span>
                         <b>😶</b>
                     </div>
 
-                    <div class="case-row">
+                    <div>
                         <span>VC nahi ki</span>
                         <b>😭</b>
                     </div>
 
-                    <div class="case-row">
+                    <div>
                         <span>Tum gussa ho</span>
                         <b>🥲</b>
                     </div>
 
                 </div>
 
-
-                <img
-                    src="images/run.gif"
-                    alt="Running cute characters"
-                    class="run-gif"
-                >
-
-                <p class="funny-text">
-                    Aur ab main yahan apni jaan bachane ke liye
-                    website bana raha hoon. 😂
+                <p class="normal-text">
+                    Ab main yahan court mein apna case
+                    defend karne ke bajaye website bana raha hoon. 😂
                 </p>
 
                 <button
-                    id="next2"
-                    class="main-btn"
+                    id="button3"
+                    class="pink-button"
                 >
-                    Haan haan, aage bolo →
+                    Theek hai, aage 😭
                 </button>
 
             </div>
@@ -268,62 +253,65 @@
         </section>
 
 
-        <!-- ============================
-             PAGE 4
-        ============================= -->
+        <!-- =====================
+             SCREEN 4
+        ====================== -->
 
-        <section id="page4" class="page">
+        <section id="screen4" class="screen">
 
-            <div class="page-content">
+            <div class="content">
 
-                <p class="label">
+                <p class="eyebrow">
                     ACTUAL SORRY 💗
                 </p>
 
                 <h2>
-                    Bas itna kehna tha...
+                    Ab seriously...
                 </h2>
 
-                <div class="love-section">
+                <div class="sorry-section">
 
                     <img
                         src="images/love.gif"
-                        alt="Cute love animation"
                         class="love-gif"
+                        alt="cute"
                     >
 
-                    <div class="love-message">
+                    <div class="sorry-text">
 
                         <p>
-                            Mujhe pata hai tum thodi si gussa ho,
-                            aur honestly... valid hai. 😭
+                            Mujhe pata hai tum thodi si gussa ho mujhse.
                         </p>
 
                         <p>
-                            Friend ka naam mention karna aur
-                            VC na karna — dono meri taraf se
-                            thode stupid moves the. 😂
+                            Aur honestly, friend ka naam mention karna
+                            aur VC na karna dono meri taraf se
+                            thode stupid moves the. 😭😂
                         </p>
 
                         <p>
                             But maine jaan ke kuch nahi kiya tha.
-                            Bas kabhi kabhi mera dimaag
-                            mujhse pehle decisions le leta hai. 😭
+                            Tumhe irritate karna mera intention nahi tha.
                         </p>
 
-                        <p class="highlight">
-                            So... sorry yaar. 🥺
+                        <p>
+                            Bas kabhi kabhi mera dimaag
+                            mujhse pehle decision le leta hai. 😂
                         </p>
+
+                        <strong>
+                            So... sorry yaar. 🥺💗
+                        </strong>
 
                     </div>
 
                 </div>
 
                 <button
-                    id="next3"
-                    class="main-btn"
+                    id="button4"
+                    class="pink-button"
                 >
-                    Last wali baat... 👀
+                    Last question 👀
                 </button>
 
             </div>
@@ -331,44 +319,44 @@
         </section>
 
 
-        <!-- ============================
-             PAGE 5
-        ============================= -->
+        <!-- =====================
+             SCREEN 5
+        ====================== -->
 
-        <section id="page5" class="page">
+        <section id="screen5" class="screen">
 
-            <div class="page-content final-page">
+            <div class="content final-content">
 
                 <img
                     src="images/download.gif"
-                    alt="Cute animation"
                     class="final-gif"
+                    alt="cute"
                 >
 
-                <p class="label">
-                    AB LAST 😭
+                <p class="eyebrow">
+                    AB BATAO 😭
                 </p>
 
                 <h2>
-                    Ab maan bhi jao na?
+                    Ab gussa thoda kam hua?
                 </h2>
 
-                <p class="final-text">
-                    Itna bada website bana diya hai...
-                    ab thoda sa gussa kam toh banta hai. 😂
+                <p class="normal-text">
+                    Itna bada website bana diya...
+                    thoda toh effort count hona chahiye na. 😂
                 </p>
 
-                <div class="buttons">
+                <div class="choice-area">
 
                     <button
-                        id="yesBtn"
+                        id="yesButton"
                         class="choice yes"
                     >
-                        Haan theek hai 🥺💗
+                        Haan 🥺💗
                     </button>
 
                     <button
-                        id="stillAngryBtn"
+                        id="noButton"
                         class="choice no"
                     >
                         Nahi 😤
@@ -377,8 +365,8 @@
                 </div>
 
                 <p
-                    id="finalReply"
-                    class="final-reply"
+                    id="answer"
+                    class="answer"
                 ></p>
 
             </div>
@@ -386,68 +374,77 @@
         </section>
 
 
-        <!-- ============================
-             PAGE 6
-        ============================= -->
+        <!-- =====================
+             SCREEN 6
+        ====================== -->
 
-        <section id="page6" class="page">
+        <section id="screen6" class="screen">
 
-            <div class="page-content ending">
+            <div class="content ending">
 
-                <div class="big-heart">
+                <div class="heart">
                     💗
                 </div>
 
-                <p class="label">
-                    CONGRATULATIONS 😂
+                <p class="eyebrow">
+                    FINALLY 😂
                 </p>
 
                 <h2>
-                    Gussa thoda kam hua? 👀
+                    Chalo ab normal ho jao.
                 </h2>
 
-                <p class="ending-text">
-                    Bas yahi chahiye tha.
-                    Ab normal ho jao madam. 😭😂
+                <p class="normal-text">
+                    Bas itna hi chahiye tha.
+                    Ab meri jaan mat khaana. 😭😂
                 </p>
+
+                <img
+                    src="images/love.gif"
+                    class="ending-gif"
+                    alt="love"
+                >
 
                 <p class="signature">
                     — Ayan
                 </p>
-
-                <button
-                    id="restartBtn"
-                    class="secondary-btn"
-                >
-                    Dobara dekho ↻
-                </button>
 
             </div>
 
         </section>
 
 
-        <!-- PROGRESS -->
+        <!-- Music control -->
+        <button
+            id="musicButton"
+            class="music-button"
+            aria-label="Music"
+        >
+            ♪
+        </button>
+
+
+        <!-- Progress -->
         <div class="progress">
 
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <span class="progress-dot active"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- MUSIC -->
-    <audio id="music" loop>
-        <source
-            src="music/music.mp3"
-            type="audio/mpeg"
-        >
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+    <audio id="music" loop preload="auto">
+        <source src="music/music.mp3" type="audio/mpeg">
     </audio>
 
 
