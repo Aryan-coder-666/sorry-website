@@ -1,56 +1,42 @@
 /* =========================================
-   SETTINGS
-========================================= */
-
-const settings = {
-
-    typeSpeed: 35,
-
-    message:
-    "Okay suno... 😭\n\nMujhe pata hai thodi si gussa ho tum mujhse.\n\nAur haan, friend ka naam mention karna + VC na karna... dono ka case mere against hai. 😭😂\n\nBut sach mein, mera tumhe irritate karne ka intention nahi tha.\n\nAb itna bhi gussa mat ho yaar. 🥲\n\nAur dekho, sorry bolne ke liye poori website bana di maine... ab isse zyada effort aur kya karu? 😂\n\nBas ab thoda sa gussa kam karo, baaki daantna ho toh woh baad mein kar lena. 😭😂💗"
-
-};
-
-
-/* =========================================
    ELEMENTS
 ========================================= */
 
 const intro =
     document.getElementById("intro");
 
-const website =
-    document.getElementById("website");
+const startBtn =
+    document.getElementById("startBtn");
 
-const enterBtn =
-    document.getElementById("enterBtn");
+const site =
+    document.getElementById("site");
 
 const envelope =
     document.getElementById("envelope");
 
-const openHint =
-    document.getElementById("openHint");
+const envelopeHint =
+    document.getElementById("envelopeHint");
 
-const typeText =
-    document.getElementById("typeText");
+const typedMessage =
+    document.getElementById("typedMessage");
 
-const messageNext =
-    document.getElementById("messageNext");
+const next1 =
+    document.getElementById("next1");
 
-const memoryNext =
-    document.getElementById("memoryNext");
+const next2 =
+    document.getElementById("next2");
 
-const heartNext =
-    document.getElementById("heartNext");
+const next3 =
+    document.getElementById("next3");
 
 const yesBtn =
     document.getElementById("yesBtn");
 
-const maybeBtn =
-    document.getElementById("maybeBtn");
+const stillAngryBtn =
+    document.getElementById("stillAngryBtn");
 
-const choiceMessage =
-    document.getElementById("choiceMessage");
+const finalReply =
+    document.getElementById("finalReply");
 
 const restartBtn =
     document.getElementById("restartBtn");
@@ -61,45 +47,63 @@ const musicBtn =
 const music =
     document.getElementById("music");
 
-const sections = {
-
-    letter:
-        document.getElementById("letterSection"),
-
-    message:
-        document.getElementById("messageSection"),
-
-    memories:
-        document.getElementById("memoriesSection"),
-
-    heart:
-        document.getElementById("heartSection"),
-
-    final:
-        document.getElementById("finalSection"),
-
-    ending:
-        document.getElementById("endingSection")
-
-};
+const floatingHearts =
+    document.getElementById("floatingHearts");
 
 
 /* =========================================
-   STATE
+   PAGES
 ========================================= */
 
-let currentSection = 0;
+const pages = [
+    document.getElementById("page1"),
+    document.getElementById("page2"),
+    document.getElementById("page3"),
+    document.getElementById("page4"),
+    document.getElementById("page5"),
+    document.getElementById("page6")
+];
 
+const dots =
+    document.querySelectorAll(".dot");
+
+
+let currentPage = 0;
+let envelopeOpened = false;
 let typingTimer = null;
-
 let musicPlaying = false;
 
 
 /* =========================================
-   ENTER WEBSITE
+   HINGLISH MESSAGE
 ========================================= */
 
-enterBtn.addEventListener("click", () => {
+const message = `
+Okay suno... 😭
+
+Mujhe pata hai thodi si gussa ho tum mujhse.
+
+Aur haan... friend ka naam mention karna aur VC na karna,
+dono ka case mere against hai. 😭😂
+
+But sach mein, mera tumhe irritate karne ka intention nahi tha.
+
+Bas kabhi kabhi main bina soche kuch kar deta hoon,
+aur phir baad mein sochta hoon —
+"haan bhai, ye kya kar diya." 😭
+
+Isliye ye meri taraf se ek proper sorry hai.
+
+Ab itna bhi gussa mat ho yaar...
+warna ye poori website banane ki mehnat waste ho jayegi. 😂🥲
+`;
+
+
+/* =========================================
+   START
+========================================= */
+
+startBtn.addEventListener("click", () => {
 
     intro.classList.add("hide");
 
@@ -107,73 +111,55 @@ enterBtn.addEventListener("click", () => {
 
         intro.style.display = "none";
 
-        website.classList.remove("hidden");
+        site.classList.remove("hidden");
 
-        showSection("letter");
+        createFloatingHearts();
 
-        createParticles();
+        showPage(0);
 
-        tryStartMusic();
+        startMusic();
 
-    }, 900);
+    }, 700);
 
 });
 
 
 /* =========================================
-   SECTION SYSTEM
+   PAGE NAVIGATION
 ========================================= */
 
-const sectionOrder = [
-    "letter",
-    "message",
-    "memories",
-    "heart",
-    "final",
-    "ending"
-];
+function showPage(index) {
 
+    pages.forEach((page, i) => {
 
-function showSection(name) {
-
-    Object.values(sections).forEach(section => {
-
-        section.classList.remove("active");
+        page.classList.toggle(
+            "active",
+            i === index
+        );
 
     });
 
-    setTimeout(() => {
+    dots.forEach((dot, i) => {
 
-        sections[name].classList.add("active");
+        dot.classList.toggle(
+            "active",
+            i === index
+        );
 
-    }, 50);
+    });
 
-
-    currentSection =
-        sectionOrder.indexOf(name);
-
-    updateProgress();
+    currentPage = index;
 
 }
 
 
-/* =========================================
-   PROGRESS
-========================================= */
+function nextPage() {
 
-function updateProgress() {
+    if (currentPage < pages.length - 1) {
 
-    const dots =
-        document.querySelectorAll(".progress-dot");
+        showPage(currentPage + 1);
 
-    dots.forEach((dot, index) => {
-
-        dot.classList.toggle(
-            "active",
-            index === currentSection
-        );
-
-    });
+    }
 
 }
 
@@ -182,7 +168,23 @@ function updateProgress() {
    ENVELOPE
 ========================================= */
 
-let envelopeOpened = false;
+envelope.addEventListener("click", openEnvelope);
+
+envelope.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Enter" ||
+        event.key === " "
+    ) {
+
+        event.preventDefault();
+
+        openEnvelope();
+
+    }
+
+});
+
 
 function openEnvelope() {
 
@@ -192,97 +194,52 @@ function openEnvelope() {
 
     envelope.classList.add("open");
 
-    openHint.textContent =
-        "Opening...";
+    envelopeHint.textContent =
+        "Bas ek second... 🥺";
 
     setTimeout(() => {
 
-        showSection("message");
+        showPage(1);
 
-        startTyping();
+        typeMessage();
 
-    }, 1400);
+    }, 1200);
 
 }
-
-
-envelope.addEventListener(
-    "click",
-    openEnvelope
-);
-
-
-envelope.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Enter" ||
-            event.key === " "
-        ) {
-
-            event.preventDefault();
-
-            openEnvelope();
-
-        }
-
-    }
-);
 
 
 /* =========================================
    TYPEWRITER
 ========================================= */
 
-function startTyping() {
+function typeMessage() {
 
     clearInterval(typingTimer);
 
-    typeText.innerHTML = "";
+    typedMessage.textContent = "";
 
-    messageNext.classList.remove("show");
+    next1.classList.add("hidden");
 
     let index = 0;
 
-
-    const cursor =
-        document.createElement("span");
-
-    cursor.className = "cursor";
-
-    typeText.appendChild(cursor);
-
-
     typingTimer = setInterval(() => {
 
-        if (
-            index >=
-            settings.message.length
-        ) {
+        if (index >= message.length) {
 
             clearInterval(typingTimer);
 
-            cursor.remove();
-
-            messageNext.classList.add("show");
+            next1.classList.remove("hidden");
 
             return;
 
         }
 
-
-        const character =
-            settings.message[index];
-
-        typeText.insertBefore(
-            document.createTextNode(character),
-            cursor
-        );
+        typedMessage.textContent +=
+            message[index];
 
         index++;
 
-    }, settings.typeSpeed);
+    }, 25);
 
 }
 
@@ -291,72 +248,72 @@ function startTyping() {
    NEXT BUTTONS
 ========================================= */
 
-messageNext.addEventListener(
+next1.addEventListener(
     "click",
     () => {
 
-        showSection("memories");
+        showPage(2);
 
     }
 );
 
 
-memoryNext.addEventListener(
+next2.addEventListener(
     "click",
     () => {
 
-        showSection("heart");
+        showPage(3);
 
     }
 );
 
 
-heartNext.addEventListener(
+next3.addEventListener(
     "click",
     () => {
 
-        showSection("final");
+        showPage(4);
 
     }
 );
 
 
 /* =========================================
-   FINAL BUTTON
+   FINAL YES
 ========================================= */
 
 yesBtn.addEventListener(
     "click",
     () => {
 
-        choiceMessage.textContent =
-            "That's all I wanted to hear. Thank you. ♡";
+        finalReply.textContent =
+            "Yesss 😭💗 mujhe pata tha tum itni bhi gussa nahi ho.";
 
         createCelebration();
 
         setTimeout(() => {
 
-            showSection("ending");
+            showPage(5);
 
-        }, 1600);
+        }, 1500);
 
     }
 );
 
 
 /* =========================================
-   MAYBE BUTTON
+   STILL ANGRY
 ========================================= */
 
-maybeBtn.addEventListener(
+stillAngryBtn.addEventListener(
     "click",
     () => {
 
-        choiceMessage.textContent =
-            "That's okay. Take your time. ♡";
+        finalReply.textContent =
+            "Accha ji 😭 thoda aur time le lo... main yahin hoon.";
 
-        maybeBtn.textContent =
-            "Okay ♡";
+        stillAngryBtn.textContent =
+            "Abhi bhi? 😭";
 
     }
 );
@@ -374,79 +331,64 @@ restartBtn.addEventListener(
 
         envelope.classList.remove("open");
 
-        typeText.innerHTML = "";
+        envelopeHint.textContent =
+            "Envelope pe click karo 👆";
 
-        messageNext.classList.remove("show");
+        typedMessage.textContent = "";
 
-        choiceMessage.textContent = "";
+        next1.classList.add("hidden");
 
-        maybeBtn.textContent =
-            "I'll think about it";
+        finalReply.textContent = "";
 
-        showSection("letter");
+        stillAngryBtn.textContent =
+            "Nahi 😤";
+
+        showPage(0);
 
     }
 );
 
 
 /* =========================================
-   PARTICLES
+   FLOATING HEARTS
 ========================================= */
 
-function createParticles() {
+function createFloatingHearts() {
 
-    const container =
-        document.getElementById("particles");
+    setInterval(() => {
 
-    container.innerHTML = "";
+        const heart =
+            document.createElement("span");
 
+        heart.className =
+            "floating-heart";
 
-    for (
-        let i = 0;
-        i < 45;
-        i++
-    ) {
+        heart.textContent =
+            Math.random() > .5
+                ? "♡"
+                : "♥";
 
-        const particle =
-            document.createElement("div");
-
-        particle.className =
-            "particle";
-
-
-        particle.style.left =
+        heart.style.left =
             Math.random() * 100 + "%";
 
+        heart.style.fontSize =
+            (10 + Math.random() * 18) + "px";
 
-        particle.style.top =
-            Math.random() * 100 + "%";
+        const duration =
+            6 + Math.random() * 7;
 
+        heart.style.animationDuration =
+            duration + "s";
 
-        particle.style.setProperty(
-            "--duration",
-            (5 + Math.random() * 10) + "s"
-        );
+        floatingHearts.appendChild(heart);
 
+        setTimeout(() => {
 
-        particle.style.animationDelay =
-            (-Math.random() * 10) + "s";
+            heart.remove();
 
+        }, duration * 1000);
 
-        const size =
-            1 + Math.random() * 3;
-
-        particle.style.width =
-            size + "px";
-
-        particle.style.height =
-            size + "px";
-
-
-        container.appendChild(
-            particle
-        );
-
-    }
+    }, 700);
 
 }
 
@@ -457,26 +399,18 @@ function createParticles() {
 
 function createCelebration() {
 
-    for (
-        let i = 0;
-        i < 25;
-        i++
-    ) {
+    for (let i = 0; i < 30; i++) {
 
         const item =
             document.createElement("div");
 
         item.textContent =
-            Math.random() > 0.5
-                ? "♡"
-                : "✦";
-
+            Math.random() > .5
+                ? "💗"
+                : "✨";
 
         item.style.position =
             "fixed";
-
-        item.style.zIndex =
-            "100";
 
         item.style.left =
             "50%";
@@ -484,74 +418,63 @@ function createCelebration() {
         item.style.top =
             "50%";
 
-        item.style.color =
-            Math.random() > 0.5
-                ? "#ff9fbe"
-                : "#d5c7ff";
+        item.style.zIndex =
+            "200";
 
         item.style.fontSize =
-            (12 + Math.random() * 20) +
-            "px";
+            (12 + Math.random() * 18) + "px";
 
         item.style.pointerEvents =
             "none";
 
+        document.body.appendChild(item);
 
         const angle =
             Math.random() *
-            Math.PI *
-            2;
+            Math.PI * 2;
 
         const distance =
-            100 +
-            Math.random() * 300;
+            100 + Math.random() * 300;
 
         const x =
-            Math.cos(angle) *
-            distance;
+            Math.cos(angle) * distance;
 
         const y =
-            Math.sin(angle) *
-            distance;
+            Math.sin(angle) * distance;
 
-
-        item.animate(
-            [
+        const animation =
+            item.animate(
+                [
+                    {
+                        transform:
+                            "translate(-50%, -50%) scale(0)",
+                        opacity: 1
+                    },
+                    {
+                        transform:
+                            `translate(
+                                calc(-50% + ${x}px),
+                                calc(-50% + ${y}px)
+                            )
+                            scale(1.2)`,
+                        opacity: 0
+                    }
+                ],
                 {
-                    transform:
-                        "translate(-50%, -50%) scale(0)",
-                    opacity: 1
-                },
+                    duration:
+                        900 +
+                        Math.random() * 700,
 
-                {
-                    transform:
-                        `translate(
-                            calc(-50% + ${x}px),
-                            calc(-50% + ${y}px)
-                        )
-                        scale(1.2)`,
-                    opacity: 0
+                    easing:
+                        "cubic-bezier(.2,.8,.2,1)"
                 }
-            ],
-            {
-                duration:
-                    1000 +
-                    Math.random() * 700,
+            );
 
-                easing:
-                    "cubic-bezier(.2,.8,.2,1)"
-            }
-        );
-
-
-        document.body.appendChild(item);
-
-
-        setTimeout(() => {
+        animation.finished.then(() => {
 
             item.remove();
 
-        }, 2000);
+        });
 
     }
 
@@ -562,9 +485,9 @@ function createCelebration() {
    MUSIC
 ========================================= */
 
-function tryStartMusic() {
+function startMusic() {
 
-    music.volume = 0.35;
+    music.volume = .3;
 
     music.play()
         .then(() => {
@@ -621,7 +544,7 @@ musicBtn.addEventListener(
                 .catch(() => {
 
                     alert(
-                        "Add music/music.mp3 to enable music."
+                        "Music file nahi mila. music/music.mp3 add karo."
                     );
 
                 });

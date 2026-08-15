@@ -4,130 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A Little Something For You 💌</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Ek Chhoti Si Sorry 💗</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap"
         rel="stylesheet"
     >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================================
-         LOADING / INTRO
-    ========================================== -->
+    <!-- FLOATING HEARTS -->
+    <div id="floatingHearts"></div>
 
-    <div id="intro" class="screen intro-screen">
+    <!-- ================================
+         INTRO
+    ================================= -->
 
-        <div class="intro-glow"></div>
+    <main id="intro" class="intro">
 
-        <div class="intro-content">
+        <div class="intro-card">
 
-            <div class="tiny-label">
-                SOMETHING I MADE FOR YOU
+            <div class="intro-gif-wrap">
+                <img
+                    src="images/cute.gif"
+                    alt="Cute animation"
+                    class="intro-gif"
+                >
             </div>
 
-            <h1>
-                Before you leave...
-            </h1>
-
-            <p>
-                I have one little thing to show you.
+            <p class="small-heading">
+                OYE SUNO... 👀
             </p>
 
-            <button id="enterBtn" class="primary-btn">
-                Open this 💌
+            <h1>
+                Ek chhoti si<br>
+                <span>baat hai...</span>
+            </h1>
+
+            <p class="intro-text">
+                Pehle ye dekh lo,<br>
+                phir jitna gussa karna hai kar lena. 😭😂
+            </p>
+
+            <button id="startBtn" class="main-btn">
+                Dekho na 💌
             </button>
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- =========================================
-         MAIN WEBSITE
-    ========================================== -->
+    <!-- ================================
+         WEBSITE
+    ================================= -->
 
-    <div id="website" class="website hidden">
+    <div id="site" class="site hidden">
 
-        <!-- Background -->
-        <div class="background">
-
-            <div class="orb orb-one"></div>
-            <div class="orb orb-two"></div>
-            <div class="orb orb-three"></div>
-
-        </div>
+        <!-- MUSIC -->
+        <button id="musicBtn" class="music-btn">
+            ♪
+        </button>
 
 
-        <!-- Stars / particles -->
-        <div id="particles"></div>
+        <!-- ============================
+             PAGE 1
+        ============================= -->
 
+        <section id="page1" class="page active">
 
-        <!-- =====================================
-             SECTION 1 — ENVELOPE
-        ====================================== -->
+            <div class="page-content">
 
-        <section id="letterSection" class="section active">
-
-            <div class="section-inner">
-
-                <div class="eyebrow">
-                    A SMALL LETTER
-                </div>
+                <p class="label">
+                    THODA SA SORRY MOMENT 😭
+                </p>
 
                 <h2>
-                    I wrote something...
+                    Ye tumhare liye hai.
                 </h2>
 
-                <p class="section-subtitle">
-                    You just have to open it.
+                <p class="subtext">
+                    Aur haan... pura dekhna padega. 😌
                 </p>
 
 
-                <div
-                    id="envelope"
-                    class="envelope"
-                    role="button"
-                    tabindex="0"
-                    aria-label="Open letter"
-                >
+                <div class="envelope-area">
 
-                    <div class="envelope-back"></div>
+                    <!-- ENVELOPE -->
+                    <div
+                        id="envelope"
+                        class="envelope"
+                        tabindex="0"
+                    >
 
-<div class="envelope-paper">
+                        <div class="envelope-back"></div>
 
-    <img
-        src="images/sorry.png"
-        alt="Sorry"
-        class="sorry-image"
-    >
+                        <div class="letter-paper">
 
-    <span>
-        For you 💌
-    </span>
+                            <div class="paper-heart">
+                                ♡
+                            </div>
 
-</div>
+                            <strong>
+                                For you
+                            </strong>
 
-                    <div class="envelope-front"></div>
+                            <small>
+                                open me 💌
+                            </small>
 
-                    <div class="envelope-flap"></div>
+                        </div>
 
-                    <div class="wax">
-                        ♥
+                        <div class="envelope-front"></div>
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="wax">
+                            ♥
+                        </div>
+
+                    </div>
+
+
+                    <!-- SORRY CHARACTER ON RIGHT -->
+                    <div class="sorry-character">
+
+                        <img
+                            src="images/sorry.png"
+                            alt="Sorry"
+                        >
+
+                        <div class="speech-bubble">
+                            sorry na 🥺
+                        </div>
+
                     </div>
 
                 </div>
 
 
-                <p id="openHint" class="hint">
-                    Tap the envelope
+                <p id="envelopeHint" class="hint">
+                    Envelope pe click karo 👆
                 </p>
 
             </div>
@@ -135,39 +158,109 @@
         </section>
 
 
-        <!-- =====================================
-             SECTION 2 — LETTER
-        ====================================== -->
+        <!-- ============================
+             PAGE 2
+        ============================= -->
 
-        <section id="messageSection" class="section">
+        <section id="page2" class="page">
 
-            <div class="section-inner letter-layout">
+            <div class="page-content message-page">
 
-                <div class="eyebrow">
-                    PAGE ONE
+                <div class="gif-side left-gif">
+                    <img
+                        src="images/sadlife.gif"
+                        alt="Sad cute animation"
+                    >
                 </div>
 
+                <div class="message-content">
+
+                    <p class="label">
+                        OKAY AB SERIOUSLY 😭
+                    </p>
+
+                    <h2>
+                        Suno madam...
+                    </h2>
+
+                    <div class="message-card">
+
+                        <img
+                            src="images/cute.gif"
+                            alt="Cute"
+                            class="message-gif"
+                        >
+
+                        <p id="typedMessage"></p>
+
+                    </div>
+
+                    <button
+                        id="next1"
+                        class="main-btn hidden"
+                    >
+                        Aage bhi hai 👀 →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================
+             PAGE 3
+        ============================= -->
+
+        <section id="page3" class="page">
+
+            <div class="page-content">
+
+                <p class="label">
+                    THODA SA EXPLANATION 😭
+                </p>
+
                 <h2>
-                    Okay... here it goes.
+                    Case mere against hai...
                 </h2>
 
-                <div class="letter-box">
+                <div class="case-card">
 
-    <img
-        src="images/cute.gif"
-        alt="Cute"
-        class="cute-gif"
-    >
+                    <div class="case-row">
+                        <span>Friend ka naam mention kiya</span>
+                        <b>😶</b>
+                    </div>
 
-    <p id="typeText"></p>
+                    <div class="case-row">
+                        <span>VC nahi ki</span>
+                        <b>😭</b>
+                    </div>
 
-</div>
+                    <div class="case-row">
+                        <span>Tum gussa ho</span>
+                        <b>🥲</b>
+                    </div>
+
+                </div>
+
+
+                <img
+                    src="images/run.gif"
+                    alt="Running cute characters"
+                    class="run-gif"
+                >
+
+                <p class="funny-text">
+                    Aur ab main yahan apni jaan bachane ke liye
+                    website bana raha hoon. 😂
+                </p>
 
                 <button
-                    id="messageNext"
-                    class="primary-btn hidden-btn"
+                    id="next2"
+                    class="main-btn"
                 >
-                    Keep reading →
+                    Haan haan, aage bolo →
                 </button>
 
             </div>
@@ -175,78 +268,62 @@
         </section>
 
 
-        <!-- =====================================
-             SECTION 3 — MEMORIES
-        ====================================== -->
+        <!-- ============================
+             PAGE 4
+        ============================= -->
 
-        <section id="memoriesSection" class="section">
+        <section id="page4" class="page">
 
-            <div class="section-inner wide">
+            <div class="page-content">
 
-                <div class="eyebrow">
-                    LITTLE MOMENTS
-                </div>
-
-                <h2>
-                    Some things are worth remembering.
-                </h2>
-
-                <p class="section-subtitle">
-                    Add your own pictures later.
+                <p class="label">
+                    ACTUAL SORRY 💗
                 </p>
 
+                <h2>
+                    Bas itna kehna tha...
+                </h2>
 
-                <div class="gallery">
+                <div class="love-section">
 
-                    <div class="photo-card">
+                    <img
+                        src="images/love.gif"
+                        alt="Cute love animation"
+                        class="love-gif"
+                    >
 
-                        <div class="photo-placeholder">
-                            <span>PHOTO 01</span>
-                            <small>Add your picture</small>
-                        </div>
+                    <div class="love-message">
 
                         <p>
-                            One of those moments.
+                            Mujhe pata hai tum thodi si gussa ho,
+                            aur honestly... valid hai. 😭
                         </p>
 
-                    </div>
-
-
-                    <div class="photo-card featured">
-
-                        <div class="photo-placeholder">
-                            <span>PHOTO 02</span>
-                            <small>Add your picture</small>
-                        </div>
-
                         <p>
-                            One I'll remember.
+                            Friend ka naam mention karna aur
+                            VC na karna — dono meri taraf se
+                            thode stupid moves the. 😂
                         </p>
 
-                    </div>
-
-
-                    <div class="photo-card">
-
-                        <div class="photo-placeholder">
-                            <span>PHOTO 03</span>
-                            <small>Add your picture</small>
-                        </div>
-
                         <p>
-                            And another little memory.
+                            But maine jaan ke kuch nahi kiya tha.
+                            Bas kabhi kabhi mera dimaag
+                            mujhse pehle decisions le leta hai. 😭
+                        </p>
+
+                        <p class="highlight">
+                            So... sorry yaar. 🥺
                         </p>
 
                     </div>
 
                 </div>
 
-
                 <button
-                    id="memoryNext"
-                    class="primary-btn"
+                    id="next3"
+                    class="main-btn"
                 >
-                    There's more →
+                    Last wali baat... 👀
                 </button>
 
             </div>
@@ -254,106 +331,54 @@
         </section>
 
 
-        <!-- =====================================
-             SECTION 4 — SECOND MESSAGE
-        ====================================== -->
+        <!-- ============================
+             PAGE 5
+        ============================= -->
 
-        <section id="heartSection" class="section">
+        <section id="page5" class="page">
 
-            <div class="section-inner">
+            <div class="page-content final-page">
 
-                <div class="eyebrow">
-                    PAGE TWO
-                </div>
-
-                <div class="heart-symbol">
-                    ♡
-                </div>
-
-                <h2>
-                    The important part...
-                </h2>
-
-                <div class="quote-box">
-
-                    <p>
-                        I don't expect everything to magically
-                        become perfect because of a webpage.
-                    </p>
-
-                    <p>
-                        I just wanted to take a moment,
-                        put my thoughts into words,
-                        and say what I should have said properly.
-                    </p>
-
-                    <p class="signature">
-                        — From someone who cares
-                    </p>
-
-                </div>
-
-
-                <button
-                    id="heartNext"
-                    class="primary-btn"
+                <img
+                    src="images/download.gif"
+                    alt="Cute animation"
+                    class="final-gif"
                 >
-                    One last thing →
-                </button>
 
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
-             SECTION 5 — FINAL QUESTION
-        ====================================== -->
-
-        <section id="finalSection" class="section">
-
-            <div class="section-inner">
-
-                <div class="final-star">
-                    ✦
-                </div>
-
-                <div class="eyebrow">
-                    LAST PAGE
-                </div>
-
-                <h2>
-                    So...
-                </h2>
-
-                <p class="final-question">
-                    Can we leave the bad moment behind
-                    and start again?
+                <p class="label">
+                    AB LAST 😭
                 </p>
 
+                <h2>
+                    Ab maan bhi jao na?
+                </h2>
 
-                <div class="choice-area">
+                <p class="final-text">
+                    Itna bada website bana diya hai...
+                    ab thoda sa gussa kam toh banta hai. 😂
+                </p>
+
+                <div class="buttons">
 
                     <button
                         id="yesBtn"
-                        class="choice-btn yes-btn"
+                        class="choice yes"
                     >
-                        Yes 💗
+                        Haan theek hai 🥺💗
                     </button>
 
                     <button
-                        id="maybeBtn"
-                        class="choice-btn maybe-btn"
+                        id="stillAngryBtn"
+                        class="choice no"
                     >
-                        I'll think about it
+                        Nahi 😤
                     </button>
 
                 </div>
 
-
                 <p
-                    id="choiceMessage"
-                    class="choice-message"
+                    id="finalReply"
+                    class="final-reply"
                 ></p>
 
             </div>
@@ -361,47 +386,40 @@
         </section>
 
 
-        <!-- =====================================
-             SECTION 6 — FINAL REVEAL
-        ====================================== -->
+        <!-- ============================
+             PAGE 6
+        ============================= -->
 
-        <section id="endingSection" class="section">
+        <section id="page6" class="page">
 
-            <div class="section-inner">
+            <div class="page-content ending">
 
-                <div class="celebration">
-
-                    <div class="celebration-heart">
-                        ♥
-                    </div>
-
-                    <div class="celebration-ring"></div>
-
+                <div class="big-heart">
+                    💗
                 </div>
 
-                <div class="eyebrow">
-                    THE END
-                </div>
+                <p class="label">
+                    CONGRATULATIONS 😂
+                </p>
 
                 <h2>
-                    Thank you.
+                    Gussa thoda kam hua? 👀
                 </h2>
 
                 <p class="ending-text">
-                    Whatever happens next,
-                    thank you for taking the time
-                    to see this little message.
+                    Bas yahi chahiye tha.
+                    Ab normal ho jao madam. 😭😂
                 </p>
 
-                <p class="ending-small">
-                    Made with a lot of thought ♡
+                <p class="signature">
+                    — Ayan
                 </p>
 
                 <button
                     id="restartBtn"
-                    class="ghost-btn"
+                    class="secondary-btn"
                 >
-                    Watch it again ↻
+                    Dobara dekho ↻
                 </button>
 
             </div>
@@ -409,47 +427,27 @@
         </section>
 
 
-        <!-- =====================================
-             MUSIC BUTTON
-        ====================================== -->
-
-        <button
-            id="musicBtn"
-            class="music-btn"
-            aria-label="Toggle music"
-        >
-            ♪
-        </button>
-
-
-        <!-- =====================================
-             PROGRESS
-        ====================================== -->
-
+        <!-- PROGRESS -->
         <div class="progress">
 
-            <span class="progress-dot active"></span>
-            <span class="progress-line"></span>
-            <span class="progress-dot"></span>
-            <span class="progress-line"></span>
-            <span class="progress-dot"></span>
-            <span class="progress-line"></span>
-            <span class="progress-dot"></span>
-            <span class="progress-line"></span>
-            <span class="progress-dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
 
         </div>
 
     </div>
 
 
-    <!-- Optional music.
-         Add your own music file later:
-         music/music.mp3
-    -->
-
-    <audio id="music" loop preload="auto">
-        <source src="music/music.mp3" type="audio/mpeg">
+    <!-- MUSIC -->
+    <audio id="music" loop>
+        <source
+            src="music/music.mp3"
+            type="audio/mpeg"
+        >
     </audio>
 
 
