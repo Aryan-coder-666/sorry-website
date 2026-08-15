@@ -1,127 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>A Little Something 💌</title>
+    <title>A Little Something For You 💌</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
-    <!-- Background hearts -->
-    <div class="hearts">
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
+    <!-- =========================================
+         LOADING / INTRO
+    ========================================== -->
+
+    <div id="intro" class="screen intro-screen">
+
+        <div class="intro-glow"></div>
+
+        <div class="intro-content">
+
+            <div class="tiny-label">
+                SOMETHING I MADE FOR YOU
+            </div>
+
+            <h1>
+                Before you leave...
+            </h1>
+
+            <p>
+                I have one little thing to show you.
+            </p>
+
+            <button id="enterBtn" class="primary-btn">
+                Open this 💌
+            </button>
+
+        </div>
+
     </div>
 
 
-    <!-- Main screen -->
-    <main class="page">
+    <!-- =========================================
+         MAIN WEBSITE
+    ========================================== -->
 
-        <section class="card" id="mainCard">
+    <div id="website" class="website hidden">
 
-            <div class="envelope">
-                💌
+        <!-- Background -->
+        <div class="background">
+
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="orb orb-three"></div>
+
+        </div>
+
+
+        <!-- Stars / particles -->
+        <div id="particles"></div>
+
+
+        <!-- =====================================
+             SECTION 1 — ENVELOPE
+        ====================================== -->
+
+        <section id="letterSection" class="section active">
+
+            <div class="section-inner">
+
+                <div class="eyebrow">
+                    A SMALL LETTER
+                </div>
+
+                <h2>
+                    I wrote something...
+                </h2>
+
+                <p class="section-subtitle">
+                    You just have to open it.
+                </p>
+
+
+                <div
+                    id="envelope"
+                    class="envelope"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Open letter"
+                >
+
+                    <div class="envelope-back"></div>
+
+                    <div class="envelope-paper">
+
+                        <span>
+                            For you
+                        </span>
+
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="wax">
+                        ♥
+                    </div>
+
+                </div>
+
+
+                <p id="openHint" class="hint">
+                    Tap the envelope
+                </p>
+
             </div>
-
-            <p class="small-text">
-                I made something for you...
-            </p>
-
-            <h1>
-                Before You Go...
-            </h1>
-
-            <p class="description">
-                There is something I want you to see.
-                <br>
-                Just give me one minute. 🥺
-            </p>
-
-            <button id="startButton">
-                Open It 💗
-            </button>
 
         </section>
 
 
-        <!-- Hidden second screen -->
-        <section class="card second-card" id="secondCard">
+        <!-- =====================================
+             SECTION 2 — LETTER
+        ====================================== -->
 
-            <div class="big-heart">
-                💗
+        <section id="messageSection" class="section">
+
+            <div class="section-inner letter-layout">
+
+                <div class="eyebrow">
+                    PAGE ONE
+                </div>
+
+                <h2>
+                    Okay... here it goes.
+                </h2>
+
+                <div class="letter-box">
+
+                    <p id="typeText"></p>
+
+                </div>
+
+                <button
+                    id="messageNext"
+                    class="primary-btn hidden-btn"
+                >
+                    Keep reading →
+                </button>
+
             </div>
-
-            <p class="small-text">
-                Okay... you opened it.
-            </p>
-
-            <h2>
-                So here goes...
-            </h2>
-
-            <p class="description">
-                Sometimes words are difficult to say,
-                so I decided to make you something instead.
-            </p>
-
-            <button id="continueButton">
-                Continue →
-            </button>
 
         </section>
 
 
-        <!-- Hidden final screen -->
-        <section class="card final-card" id="finalCard">
+        <!-- =====================================
+             SECTION 3 — MEMORIES
+        ====================================== -->
 
-            <div class="big-heart">
-                🥹
+        <section id="memoriesSection" class="section">
+
+            <div class="section-inner wide">
+
+                <div class="eyebrow">
+                    LITTLE MOMENTS
+                </div>
+
+                <h2>
+                    Some things are worth remembering.
+                </h2>
+
+                <p class="section-subtitle">
+                    Add your own pictures later.
+                </p>
+
+
+                <div class="gallery">
+
+                    <div class="photo-card">
+
+                        <div class="photo-placeholder">
+                            <span>PHOTO 01</span>
+                            <small>Add your picture</small>
+                        </div>
+
+                        <p>
+                            One of those moments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="photo-card featured">
+
+                        <div class="photo-placeholder">
+                            <span>PHOTO 02</span>
+                            <small>Add your picture</small>
+                        </div>
+
+                        <p>
+                            One I'll remember.
+                        </p>
+
+                    </div>
+
+
+                    <div class="photo-card">
+
+                        <div class="photo-placeholder">
+                            <span>PHOTO 03</span>
+                            <small>Add your picture</small>
+                        </div>
+
+                        <p>
+                            And another little memory.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="memoryNext"
+                    class="primary-btn"
+                >
+                    There's more →
+                </button>
+
             </div>
-
-            <h2>
-                One Last Thing...
-            </h2>
-
-            <p class="description">
-                Whatever happens,
-                I hope you know that you matter to me.
-                ❤️
-            </p>
-
-            <button id="restartButton">
-                Start Again ↻
-            </button>
 
         </section>
 
-    </main>
+
+        <!-- =====================================
+             SECTION 4 — SECOND MESSAGE
+        ====================================== -->
+
+        <section id="heartSection" class="section">
+
+            <div class="section-inner">
+
+                <div class="eyebrow">
+                    PAGE TWO
+                </div>
+
+                <div class="heart-symbol">
+                    ♡
+                </div>
+
+                <h2>
+                    The important part...
+                </h2>
+
+                <div class="quote-box">
+
+                    <p>
+                        I don't expect everything to magically
+                        become perfect because of a webpage.
+                    </p>
+
+                    <p>
+                        I just wanted to take a moment,
+                        put my thoughts into words,
+                        and say what I should have said properly.
+                    </p>
+
+                    <p class="signature">
+                        — From someone who cares
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="heartNext"
+                    class="primary-btn"
+                >
+                    One last thing →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SECTION 5 — FINAL QUESTION
+        ====================================== -->
+
+        <section id="finalSection" class="section">
+
+            <div class="section-inner">
+
+                <div class="final-star">
+                    ✦
+                </div>
+
+                <div class="eyebrow">
+                    LAST PAGE
+                </div>
+
+                <h2>
+                    So...
+                </h2>
+
+                <p class="final-question">
+                    Can we leave the bad moment behind
+                    and start again?
+                </p>
+
+
+                <div class="choice-area">
+
+                    <button
+                        id="yesBtn"
+                        class="choice-btn yes-btn"
+                    >
+                        Yes 💗
+                    </button>
+
+                    <button
+                        id="maybeBtn"
+                        class="choice-btn maybe-btn"
+                    >
+                        I'll think about it
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="choiceMessage"
+                    class="choice-message"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SECTION 6 — FINAL REVEAL
+        ====================================== -->
+
+        <section id="endingSection" class="section">
+
+            <div class="section-inner">
+
+                <div class="celebration">
+
+                    <div class="celebration-heart">
+                        ♥
+                    </div>
+
+                    <div class="celebration-ring"></div>
+
+                </div>
+
+                <div class="eyebrow">
+                    THE END
+                </div>
+
+                <h2>
+                    Thank you.
+                </h2>
+
+                <p class="ending-text">
+                    Whatever happens next,
+                    thank you for taking the time
+                    to see this little message.
+                </p>
+
+                <p class="ending-small">
+                    Made with a lot of thought ♡
+                </p>
+
+                <button
+                    id="restartBtn"
+                    class="ghost-btn"
+                >
+                    Watch it again ↻
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MUSIC BUTTON
+        ====================================== -->
+
+        <button
+            id="musicBtn"
+            class="music-btn"
+            aria-label="Toggle music"
+        >
+            ♪
+        </button>
+
+
+        <!-- =====================================
+             PROGRESS
+        ====================================== -->
+
+        <div class="progress">
+
+            <span class="progress-dot active"></span>
+            <span class="progress-line"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-line"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-line"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-line"></span>
+            <span class="progress-dot"></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Optional music.
+         Add your own music file later:
+         music/music.mp3
+    -->
+
+    <audio id="music" loop preload="auto">
+        <source src="music/music.mp3" type="audio/mpeg">
+    </audio>
 
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
