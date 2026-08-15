@@ -1523,3 +1523,15 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+/* =========================================
+   CUTE GIF
+========================================= */
+
+.cute-gif {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+    border-radius: 12px;
+}
